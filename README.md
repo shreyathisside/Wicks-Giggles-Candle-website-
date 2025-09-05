@@ -1,9 +1,9 @@
 
 ##  Design Philosophy
 
-- Visual Storytelling:** Each page is crafted to reflect the brand’s identity—soft, elegant, and sensory.
-- Subtle Interactions:** Hover effects, transitions, and scroll behavior enhance user engagement without overwhelming.
-- Responsive Layout:** Optimized for both desktop and mobile, ensuring a seamless experience across devices.
+- Visual Storytelling: Each page is crafted to reflect the brand’s identity—soft, elegant, and sensory.
+- Subtle Interactions:Hover effects, transitions, and scroll behavior enhance user engagement without overwhelming.
+- Responsive Layout: Optimized for both desktop and mobile, ensuring a seamless experience across devices.
 
 ## Technologies Used
 
