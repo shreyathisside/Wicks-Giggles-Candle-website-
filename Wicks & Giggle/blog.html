@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Wicks & Giggle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+           margin-bottom: 3rem;
+           margin-top: 4rem;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--pastel-pink);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-category {
+            color: var(--dark-green);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .blog-excerpt {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            color: var(--dark-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--pastel-pink);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--pastel-green);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .page-btn:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Wicks & Giggles</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-header">
+            <h2>Candle Care & Inspiration</h2>
+            <p>Discover tips, trends, and stories from our candle-making journey</p>
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All Posts</button>
+            <button class="category-btn" data-category="care">Candle Care</button>
+            <button class="category-btn" data-category="diy">DIY Tips</button>
+            <button class="category-btn" data-category="inspiration">Inspiration</button>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card" data-category="care">
+                <img src="https://img.freepik.com/free-photo/high-angle-person-holding-mug-with-blanket-candles_23-2148720078.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Candle Care Tips" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Candle Care</span>
+                    <h3 class="blog-title">Essential Candle Care Tips for Long-Lasting Fragrance</h3>
+                    <p class="blog-excerpt">Learn how to properly care for your candles to ensure they burn evenly and maintain their beautiful scent...</p>
+                    <div class="blog-meta">
+                        <span>March 15, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="diy">
+                <img src="https://img.freepik.com/free-photo/young-woman-preparing-her-bath-time_23-2149186319.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="DIY Candle Making" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">DIY Tips</span>
+                    <h3 class="blog-title">Beginner's Guide to Making Your Own Candles</h3>
+                    <p class="blog-excerpt">Discover the basics of candle making and create your own custom scents at home...</p>
+                    <div class="blog-meta">
+                        <span>March 10, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="inspiration">
+                <img src="https://img.freepik.com/free-photo/cozy-home-composition-with-candles-blurred-background_169016-27057.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Candle Inspiration" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Inspiration</span>
+                    <h3 class="blog-title">Creating the Perfect Ambiance with Candles</h3>
+                    <p class="blog-excerpt">Explore creative ways to use candles to transform your space and create the perfect atmosphere...</p>
+                    <div class="blog-meta">
+                        <span>March 5, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="care">
+                <img src="https://img.freepik.com/free-photo/close-up-miniature-candlesticks-candles-home-decor-comfort-concept_169016-9900.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Scent Preservation Tips" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Candle Care</span>
+                    <h3 class="blog-title">How to Preserve Your Candle's Scent</h3>
+                    <p class="blog-excerpt">Discover expert tips on storing and maintaining your candles to keep their fragrance fresh and long-lasting...</p>
+                    <div class="blog-meta">
+                        <span>March 20, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="diy">
+                <img src="https://img.freepik.com/free-photo/cozy-composition-with-decorative-candles-young-tree-branches-wooden-surface-rustic-style_169016-11195.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Custom Scent Creation" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">DIY Tips</span>
+                    <h3 class="blog-title">Creating Your Signature Candle Scent</h3>
+                    <p class="blog-excerpt">Learn how to blend different fragrance oils to create your own unique candle scent combinations...</p>
+                    <div class="blog-meta">
+                        <span>March 18, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="inspiration">
+                <img src="https://img.freepik.com/free-photo/front-view-cup-hot-cocoa-with-marshmallows-candle_23-2148720089.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Seasonal Candle Ideas" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Inspiration</span>
+                    <h3 class="blog-title">Seasonal Candle Scents for Every Occasion</h3>
+                    <p class="blog-excerpt">Explore the perfect candle scents for each season and special occasions throughout the year...</p>
+                    <div class="blog-meta">
+                        <span>March 12, 2024</span>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Wicks & Giggles</h3>
+                <p>Indulge your senses! Explore our curated collection of exquisite candles, each crafted to evoke joy and serenity.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wicks & Giggles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Filter options of blogs based on categories
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.dataset.category;
+
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

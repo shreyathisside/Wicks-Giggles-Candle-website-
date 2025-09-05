@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Wicks & Giggles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .shop-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--pastel-pink);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            color: var(--dark-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            background-color: var(--pastel-green);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Wicks & Giggles</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon-container">
+                    <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="user-icon-container">
+                    <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                    <div class="user-dropdown">
+                        <a href="#" class="login-btn">Login</a>
+                        <a href="#" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="login-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <h2>Login</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <p class="switch-form">Don't have an account? <a href="#" class="switch-to-signup">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="signup-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <h2>Sign Up</h2>
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <p class="switch-form">Already have an account? <a href="#" class="switch-to-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section class="shop-section">
+            <h2>Our Collection</h2>
+            <div class="shop-grid">
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/top-view-wellness-stones-candles-spa_23-2148439251.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Lavender Dreams Candle">
+                    <h3>Lavender Dreams</h3>
+                    <p>A soothing blend of lavender and vanilla for ultimate relaxation</p>
+                    <span class="price">$24.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/cinnamon-with-cup-drink-blue_114579-29117.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Ocean Breeze Candle">
+                    <h3>Ocean Breeze</h3>
+                    <p>Fresh and crisp scent inspired by the ocean waves</p>
+                    <span class="price">$22.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/cozy-composition-with-candles-knitted-element-garland_169016-48625.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Vanilla Bliss Candle">
+                    <h3>Vanilla Bliss</h3>
+                    <p>Sweet and comforting vanilla scent for cozy evenings</p>
+                    <span class="price">$21.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/valentine39s-day-background-with-candle-rose-closeup_169016-27021.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Rose Garden Candle">
+                    <h3>Rose Garden</h3>
+                    <p>Elegant floral scent with hints of fresh roses</p>
+                    <span class="price">$23.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/candles-spring-flowers-table-serving-decor-concept-top-view_169016-29790.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Citrus Sunshine Candle">
+                    <h3>Citrus Sunshine</h3>
+                    <p>Bright and energizing blend of citrus fruits</p>
+                    <span class="price">$20.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/cup-coffee-with-cinnamon-sticks-pinecones-wooden-plate-high-quality-photo_114579-37493.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Spiced Chai Candle">
+                    <h3>Spiced Chai</h3>
+                    <p>Warm and comforting blend of spices and tea</p>
+                    <span class="price">$25.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/fried-egg-with-green-beans-pan-high-quality-photo_114579-78009.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Jasmine Night Candle">
+                    <h3>Jasmine Night</h3>
+                    <p>Exotic and romantic jasmine fragrance</p>
+                    <span class="price">$24.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/christmas-background-with-candles-form-cones-blurred-background_169016-25518.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Forest Walk Candle">
+                    <h3>Forest Walk</h3>
+                    <p>Earthy and woody scent inspired by nature</p>
+                    <span class="price">$22.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://img.freepik.com/free-photo/still-life-valentines-day-with-coconut-heart-wooden-spoons-with-coconut-wooden-background_169016-4678.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Coconut Paradise Candle">
+                    <h3>Coconut Paradise</h3>
+                    <p>Tropical coconut scent for a beachy vibe</p>
+                    <span class="price">$23.99</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Wicks & Giggles</h3>
+                <p>Indulge your senses! Explore our curated collection of exquisite candles, each crafted to evoke joy and serenity.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wicks & Giggles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

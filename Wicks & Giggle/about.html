@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wicks & Giggles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            align-items: center;
+            position: relative;
+            background-image: url('https://img.freepik.com/free-photo/natural-elements-spa-with-candles_23-2148199474.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+            z-index: 1;
+        }
+
+        .story-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .story-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .values-section {
+            background-color: var(--pastel-pink);
+            padding: 4rem 2rem;
+            margin: 4rem 2rem;
+            border-radius: 10px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+        }
+
+        .team-section {
+            margin: 4rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .our-story {
+            position: relative;
+            background-image: url('https://img.freepik.com/free-photo/beautiful-arrangement-with-candles-flowers_23-2148199474.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 4rem 0;
+            background-color: var(--pastel-green);
+        }
+
+        .our-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(181, 234, 215, 0.9), rgba(181, 234, 215, 0.7));
+            z-index: 1;
+        }
+
+        .story-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .story-text {
+            color: var(--text-color);
+        }
+
+        .story-text h2 {
+            color: var(--dark-green);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Wicks & Giggles</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1 class="animate-on-scroll">Our Story</h1>
+        </section>
+
+        <section class="our-story">
+            <div class="story-content">
+                <div class="story-text animate-on-scroll">
+                    <h2>The Beginning</h2>
+                    <p>Wicks & Giggles was born from a simple love for candles and the joy they bring to everyday moments. What started as a hobby in our small kitchen has now grown into a passion for creating handcrafted candles that light up your lives.</p>
+                    <p>Our journey began in 2020 when our founder, Jennifer, decided to turn her candle-making hobby into something more. With a background in aromatherapy and a love for natural ingredients, she set out to create candles that not only smell amazing but also tell a story & hence hold's a memory.</p>
+                </div>
+                <div class="story-image animate-on-scroll">
+                    <img src="https://img.freepik.com/free-photo/overhead-view-female-pottery-measuring-color-powder_23-2148155124.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Candle Making Process">
+                </div>
+            </div>
+        </section>
+
+        <section class="our-values">
+            <h2 class="animate-on-scroll">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We use eco-friendly materials and sustainable practices in every step of our process.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <i class="fas fa-heart"></i>
+                    <h3>Quality</h3>
+                    <p>Each candle is handcrafted with care and attention to detail.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <i class="fas fa-smile"></i>
+                    <h3>Joy</h3>
+                    <p>We believe in spreading happiness through our products and community.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="meet-team">
+            <h2 class="animate-on-scroll">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member animate-on-scroll">
+                    <div class="member-image">
+                        <img src="https://img.freepik.com/free-vector/woman-taking-care-plants_23-2148204586.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Jennifer- Founder">
+                    </div>
+                    <h3>Jennifer Green</h3>
+                    <p class="role">Founder & Creative Director</p>
+                    <p class="bio">With a background in aromatherapy and a passion for natural ingredients, Jennifer leads our creative vision.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member animate-on-scroll">
+                    <div class="member-image">
+                        <img src="https://img.freepik.com/free-vector/people-making-pottery-flat-design_23-2148227472.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Michael - Candle Maker">
+                    </div>
+                    <h3>Michael Smith</h3>
+                    <p class="role">Master Candle Maker</p>
+                    <p class="bio">Michael brings a 10 years of experience in candle making and a keen eye for detailing and aesthetics to our team.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member animate-on-scroll">
+                    <div class="member-image">
+                        <img src="https://img.freepik.com/free-vector/gradient-ambassador-illustration_52683-83383.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Emma - Marketing">
+                    </div>
+                    <h3>Emma Wilson</h3>
+                    <p class="role">Marketing Director</p>
+                    <p class="bio">Emma's creative marketing strategies helps us share our story in a more creative, practical & relatable way with the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Wicks & Giggles</h3>
+                <p>Indulge your senses! Explore our curated collection of exquisite candles, each crafted to evoke joy and serenity.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wicks & Giggles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

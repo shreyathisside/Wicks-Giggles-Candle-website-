@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wicks & Giggles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background-color: var(--pastel-pink);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #1e6b3d;
+        }
+
+        .map-container {
+            margin-top: 4rem;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .upcoming-workshops {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .upcoming-workshops h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .workshop-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .workshop-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .workshop-card:hover .workshop-image img {
+            transform: scale(1.05);
+        }
+
+        .workshop-info {
+            padding: 1.5rem;
+        }
+
+        .workshop-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .workshop-date,
+        .workshop-time,
+        .workshop-venue {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .workshop-description {
+            margin: 1rem 0;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .register-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .register-btn:hover {
+            background: #555;
+        }
+
+        @media (max-width: 768px) {
+            .workshops-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Wicks & Giggles</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h2>Get in Touch with us</h2>
+            <p>We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt info-icon"></i>
+                    <div>
+                        <h3>Visit Us at</h3>
+                        <p>2-4 Thrower Dr, Gold Coast City Queensland, 4223</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone info-icon"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>(07) 5525 0338</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope info-icon"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>hello@wicksandgiggles.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock info-icon"></i>
+                    <div>
+                        <h3>Hours</h3>
+                        <p>Monday - Friday: 9am - 6pm<br>
+                           Saturday: 10am - 4pm<br>
+                           Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" id="subject" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" class="form-textarea" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <section class="upcoming-workshops">
+            <h2>Upcoming Candle Workshops</h2>
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div class="workshop-image">
+                        <img src="https://img.freepik.com/free-photo/cake-decorating-ingredients-with-pine-cones_23-2148368260.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Basics of Candle Making Workshop">
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Basic Candle Making</h3>
+                        <p class="workshop-date">June 15, 2024</p>
+                        <p class="workshop-time">10:00 AM - 1:00 PM</p>
+                        <p class="workshop-venue">Wicks & Giggles Studio, 2-4 Thrower Dr</p>
+                        <p class="workshop-description">Learn the fundamentals of candle making, including wax selection, wick preparation, and scent blending.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image">
+                        <img src="https://img.freepik.com/premium-photo/natural-soap-workshop-traditional-methods-chemicalfree-skin-care_223582-10433.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Scent Blending Workshop">
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Scent Blending Masterclass</h3>
+                        <p class="workshop-date">June 22, 2024</p>
+                        <p class="workshop-time">2:00 PM - 5:00 PM</p>
+                        <p class="workshop-venue">Wicks & Giggles Studio, 2-4 Thrower Dr</p>
+                        <p class="workshop-description">Discover the art of creating unique fragrance combinations and learn professional scent blending techniques.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+                <div class="workshop-card">
+                    <div class="workshop-image">
+                        <img src="https://img.freepik.com/free-photo/charming-florist-decorating-bouquet_23-2147761001.jpg?ga=GA1.1.2089959426.1739510090&semt=ais_hybrid&w=740" alt="Advanced Candle Making Workshop">
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Advanced Candle Making</h3>
+                        <p class="workshop-date">June 29, 2024</p>
+                        <p class="workshop-time">10:00 AM - 3:00 PM</p>
+                        <p class="workshop-venue">Wicks & Giggles Studio, 2-4 Thrower Dr</p>
+                        <p class="workshop-description">Master advanced techniques including layered candles, embedded designs, and specialty waxes.</p>
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Wicks & Giggles</h3>
+                <p>Indulge your senses! Explore our curated collection of exquisite candles, each crafted to evoke joy and serenity.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wicks & Giggles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // For form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // For sending data if connected to the server
+            // Right now, it's only a confirmation message
+            console.log('Form submitted:', { name, email, subject, message });
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
